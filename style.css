@@ -20,6 +20,45 @@ img {
     margin-top: 5px;
 }
 
+/* edited waali image ki setyling */
+
+/* .second_td {
+
+} */
+
+/* .main-div {
+    /* margin-left: 10px; 
+   
+} */
+
+.second-td{
+    width: 156px;
+    height: 54.2;
+    margin-left: 10px;
+}
+
+.second-td .main-div{
+    margin-right: -30px;
+    /* margin-left: 10px; */
+   margin-top: -1px;
+}
+
+
+.second-td input{
+    
+}
+
+.dustbin {
+    width: 30px;
+    height: 25px;
+}
+
+.edit-image {
+    width: 30px;
+    height: 25px;
+    padding-left: 5px;
+}
+
 h3 {
     color: #FFFFFF;
     background: #232323;
@@ -48,8 +87,18 @@ p {
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
     color: #FFFFFF;
     background-color: transparent;
-    }
+}
 
+.para {
+    text-align: center;
+    background-color: #F8F9FA;
+    border: none;
+    border-bottom: 1.5px solid #343A40;
+}
+
+textarea:focus, .para:focus{
+    outline: none;
+}
 
  button{
     margin-top: 5px;

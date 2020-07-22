@@ -1,8 +1,8 @@
 
 // CHapter#38-42
 
-const { array, func } = require("prop-types");
-const { useCallback } = require("react");
+// const { func } = require("prop-types")
+
 
 function chap1_q1() {
     function power(a, b) {
@@ -179,28 +179,128 @@ function remove(e) {
 }
 
 
-var min = Number(0);
-// function timer() {
-// }
+// Remeber at the  top there is self created function which disturb very much:
+var min = 0
 
-function increase() {
-    setInterval(function () {
-
-        min += 1
-        document.getElementById("watch").innerHTML = min
-
-    }, 10)
-    console.log(min)
+function stop1() {
+    clearInterval(set1)
+    clearInterval(set2)
 }
 
-min++
-console.log(document.querySelector("#watch").innerHTML=min)
+function increase() {
+    set1 = setInterval(() => {
+        min++
+        document.getElementById("watch").innerHTML = min
+    }, 1000);
+    console.log(document.getElementById("watch").innerHTML)
+}
+function decrease() {
+    // --min
+    // document.getElementById("watch").innerHTML = min
+    set2 = setInterval(() => {
+        min--
+        document.getElementById("watch").innerHTML = min
+    }, 1000);
+    console.log(document.getElementById("watch").innerHTML)
+}
 
+var ruko = document.getElementById("stop").addEventListener("click", stop1)
+var upp = document.getElementById("up").addEventListener('click', increase)
+var down = document.getElementById("down").addEventListener("click", decrease)
+var no = 0
 
+function addition() {
+    // console.log(++no)
+    console.log(min)
+    document.getElementById("tbody1").innerHTML += `
+    <tr>
+    <th scope="row">${++no}</th>
+    <td class="second-td">${min}</td>
+    <td><img class="dustbin" src="images/remove_icon.png" onclick='deleted(event)'></td>
+    <td onclick='edited(this)'>Edit</td>
+    </tr>
+    `
+}
 
+// var id=document.getElementById(x).addEventListener("click", function(event) {
+//     console.log(event.target.parentNode)
+// })
+function deleted(event) {
+    console.log(event.target.parentNode.parentNode)
+    event.target.parentNode.parentNode.innerHTML = ''
+    flag=true
+}
 
+var elmnt = document.getElementsByClassName("on")
+var para = document.createElement("input")
+var divv = document.createElement('div')
+var image = document.createElement('img')
+var flag = true
+divv.setAttribute("class", "main-div")
+function edited(e) {
+    // appending input tag and image tag in div
+    if (flag) {
+        divv.appendChild(para)
+        divv.appendChild(image)
+        // image setting attributes
+        image.setAttribute("src", "images/edited.png")
+        image.setAttribute("class", "edit-image")
+        image.setAttribute("onclick", "change()")
+        console.log(image)
+        // setting attributes of input tag in created div
+        para.setAttribute('class', "para")
+        para.setAttribute('size', "8")
+        para.setAttribute('maxlength', "10")
+        // para.setAttribute('onblur', 'change()')
+        // targetting input to take its value and to replce with old one
+        input = event.target.parentNode.childNodes[3]
+        input.setAttribute("class", "second-td")
+        console.log("asli wala input: ", input)
+        before = input.textContent
+        console.log("value of input before applying input tag: ", before)
+        input.textContent = ""
+        console.log("input ka andar wala metruial change krne k baad: ", input.innerHTML)
+        input.appendChild(divv)
+        para.value = before
+        // console.log(input.innerHTML)
+    }
+    flag=false
+}
 
+function change() {
+    console.log("Para before ", para.value)
+    console.log("input.innerHTML Before ", input.innerHTML)
+    if (para.value !== 'NaN') {
+        input.innerHTML = para.value
+        para.value = ''
+    }
+    else {
+        input.innerHTML = input.innerHTML
+        console.log("else ", input.innerHTML)
+    }
+    // console.log(input.innerHTM)
+    console.log("Para After ", para.value)
+    flag=true
+}
 
+var note = document.getElementById("note").addEventListener('click', addition)
+
+// Chapter#43-48
+
+function expandLoris() {
+    var expandedParagraph = `Slow lorises are a group of several species of trepsirrhine primates which
+    make up the genus Nycticebus. They have a round head, narrow snout, large eyes, and a variety of
+    distinctive coloration patterns that are species-dependent. The hands and feet of slow lorises have several
+    adaptations that give them a pincer-like grip and enable them to grasp branches for long periods of time.
+    Slow lorises have a toxic bite, a rare trait among mammals. <a href="javascript:void(0);" onclick="compressLoris()"><em>Read Less.</em></a>`;
+    document.getElementById("slowLoris").innerHTML = expandedParagraph;
+}
+
+function compressLoris() {
+    var compressParagraph = `Slow lorises are a group of several species of strepsirrhine primates which make up the genus Nycticebus. 
+    <a href="javascript:void(0);" onclick="expandLoris()"><em> Click for more.</em></a>`
+    document.getElementById("slowLoris").innerHTML = compressParagraph;
+}
 
 
 
