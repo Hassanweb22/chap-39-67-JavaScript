@@ -1,6 +1,12 @@
 body {
     background-color: rgb(53, 71, 66);
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
 h2 {
@@ -26,10 +32,10 @@ img {
 
 } */
 
-/* .main-div {
-    /* margin-left: 10px; 
+.main-div {
+     margin-left: 10px; 
    
-} */
+}
 
 .second-td{
     width: 156px;
@@ -44,9 +50,9 @@ img {
 }
 
 
-.second-td input{
+/* .second-td input{
     
-}
+} */
 
 .dustbin {
     width: 30px;
@@ -96,12 +102,46 @@ p {
     border-bottom: 1.5px solid #343A40;
 }
 
+
 textarea:focus, .para:focus{
     outline: none;
 }
 
- button{
+button{
     margin-top: 5px;
+}
+
+.submitlast {
+    margin-left: 0px;
+    transition: 2s ease !important;
+}
+button[type="submit"]:hover {
+    width: 100%;
+}
+
+.signup label {
+    color: teal;
+}
+
+.signup small {
+    color: white  !important;
+    transition: 0.6s ease;
+}
+
+.signup small:hover {
+    color: rgb(0, 0, 0)  !important; 
+}
+
+.table2 td, .table2 th{
+    width: max-content !important;
+    /* vertical-align: top !important; */
+    /* vertical-align: middle; */
+    /* align-items: baseline;
+    text-align: center; */
+} 
+
+.main-div {
+width: max-content !important;
 }
 
 @media screen and (max-width:450px){
@@ -111,6 +151,45 @@ textarea:focus, .para:focus{
     }
 }
 
+
+@media screen and (max-width:850px){
+    .signup {
+        width: 80% !important;
+    }
+}
+
+@media screen and (max-width:550px){
+    .signup {
+        width: 85% !important;
+    }
+}
+
+@media screen and (max-width:450px){
+    .signup {
+        width: 90% !important;
+    }
+}
+
+@media only screen and (max-width:1050px){
+
+
+}
+
+/* #names {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+} */
+
+/* #fname, #lname {
+    width: 300px;
+    margin-left: 10px;
+} */
+
+/* .names {
+    display: flex;
+    justify-content: space-between;
+} */
 
 /* table,th,td {
     border-spacing: 10px;

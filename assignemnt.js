@@ -3,6 +3,8 @@
 
 // const { func } = require("prop-types")
 
+// const { func } = require("prop-types")
+
 
 function chap1_q1() {
     function power(a, b) {
@@ -228,7 +230,7 @@ function addition() {
 function deleted(event) {
     console.log(event.target.parentNode.parentNode)
     event.target.parentNode.parentNode.innerHTML = ''
-    flag=true
+    flag = true
 }
 
 var elmnt = document.getElementsByClassName("on")
@@ -264,7 +266,7 @@ function edited(e) {
         para.value = before
         // console.log(input.innerHTML)
     }
-    flag=false
+    flag = false
 }
 
 function change() {
@@ -280,7 +282,7 @@ function change() {
     }
     // console.log(input.innerHTM)
     console.log("Para After ", para.value)
-    flag=true
+    flag = true
 }
 
 var note = document.getElementById("note").addEventListener('click', addition)
@@ -301,6 +303,201 @@ function compressLoris() {
     <a href="javascript:void(0);" onclick="expandLoris()"><em> Click for more.</em></a>`
     document.getElementById("slowLoris").innerHTML = compressParagraph;
 }
+
+
+var tbody2 = document.getElementById("tbodysignup")
+var fname = document.getElementById("fname")
+var lname = document.getElementById("lname")
+var email = document.getElementById("email")
+var contact = document.getElementById("contact")
+var serial = 1
+
+function perform(e) {
+    tbody2 = document.getElementById("tbodysignup")
+    e.preventDefault()
+    if (tbody2.innerHTML != "") {
+        tbody2.innerHTML += `
+    <tr>
+    <th scope="row">${serial++}</th>
+    <td ondblclick="edit2(this)">${fname.value}</td>
+    <td ondblclick="edit2(this)">${lname.value}</td>
+    <td>${email.value}</td>
+    <td>${contact.value}</td>
+    <td><img class="dustbin" src="images/remove_icon.png" onclick='deleted(event)'></td>
+    </tr>  `
+    }
+    else {
+        serial = 1
+    }
+}
+
+function deleted(event) {
+    console.log(event.target.parentNode.parentNode)
+    event.target.parentNode.parentNode.innerHTML = ""
+    flag1 = true
+}
+
+
+
+// function edit2(e) {
+
+//     console.log(e)
+// }
+
+var flag1 = true
+var add = `
+<div class="main-div">
+<input id="newinput" class="para" size="4" maxlength="10" autocomplete='off'>
+<img onclick='change2()' src="images/edited.png" class="edit-image">
+</div>
+`
+var run
+var input_target
+function edit2(e) {
+    before = e.textContent
+    if (flag1) {
+        console.log("value of input before applying input tag: ", before)
+        input = e
+        input.textContent = ""
+        console.log("value of input after inserting input tag: ", input.innerHTML)
+        input.innerHTML = add
+        // input ki value m orignal td waali value serrt kr rhe hn
+        input_target = input.childNodes[1].childNodes[1]
+        input_target.value = before
+        console.log("real input ", input_target)
+    }
+    flag1 = false
+}
+
+function change2() {
+    console.log("input.innerHTML Before ", input_target.value)
+
+    if (input_target.value !== 'NaN') {
+        input.innerHTML = input_target.value
+        input_target.value = ''
+    }
+    else {
+        input.innerHTML = input.innerHTML
+        console.log("else ", input.innerHTML)
+    }
+
+    flag1 = true
+    console.log(flag1)
+}
+
+// var latest="hello"
+// function show7() {
+//     console.log(latest)
+// }
+
+var main_contents = document.getElementById("maincontent")
+function show1() {
+    document.getElementById("maincontent").childNodes.forEach(function (i) {
+        console.log(i)
+    })
+
+}
+
+
+function show2() {
+    // main_contents = document.getElementById("main-content")
+    render = document.getElementsByClassName('render')
+    console.log(render)
+    for (i = 0; i < render.length; i++) {
+        console.log(render[i].innerHTML)
+    }
+    // render.forEach(function (i) {
+    //     console.log(i)
+    // })
+}
+
+function show3() {
+    // var fname=document.getElementById("first-name")
+    // var lname=document.getElementById("last-name")
+    // var email=document.getElementById("email")
+    // fname.value="Faraz"
+    // lname.value="Ahmed"
+    // email.value="faju123ahmed@gmail.com"
+    // console.log('Done dana done done')
+    console.log(document.getElementById("maincontent").nodeType)
+    console.log(document.getElementById("last-name").nodeType)
+    all = document.getElementById("maincontent").childNodes
+    output = "";
+    all.forEach(function (j) {
+        output += j.nodeType + " "
+    })
+    console.log(output)
+    console.log(all)
+    /* it will return 1 bcz its an element if it was text than it will return 3 and for attribbute it will return 2 */
+}
+
+function show4() {
+    main_contents = document.getElementById("main-content")
+    console.log(main_contents.childNodes)
+    console.log(main_contents.firstChild)
+    console.log(main_contents.lastChild)
+
+}
+
+function clean(node) {
+    // node = document.getElementById("main-content")
+    for (var n = 0; n < node.childNodes.length; n++) {
+        var child = node.childNodes[n];
+        if
+            (
+            child.nodeType === 8
+            ||
+            (child.nodeType === 3 && !/\S/.test(child.nodeValue))
+        ) {
+            node.removeChild(child);
+            n--;
+        }
+        else if (child.nodeType === 1) {
+            clean(child);
+        }
+    }
+    console.log(node.childNodes)
+}
+
+function show5() {
+    mains = document.querySelector("#main-content")
+    clean(mains)
+    // console.log(mains)
+    for (i = 0; i < document.getElementById("main-content").childNodes.length; i++) {
+        console.log(document.getElementById("main-content").childNodes[i].innerHTML
+        )
+    }
+}
+
+function show6() {
+    mains = document.querySelector("#main-content")
+    lname = document.querySelector("#last-name")
+    // clean(mains)
+    console.log(mains.childNodes)
+    console.log(lname.nextSibling)
+    console.log(lname.previousSibling)
+    // console.log(mains)
+    // for (i = 0; i < document.getElementById("main-content").childNodes.length; i++) {
+    //     console.log(document.getElementById("main-content").childNodes[i].innerHTML
+    //     )
+}
+
+function show7() {
+    email = document.querySelector("#email")
+    console.log(email)
+    console.log(email.parentNode)
+    console.log("Node Type: " + email.nodeType + " means element")
+    // console.log(lname.nextSibling)
+    // console.log(lname.previousSibling)
+}
+
+
+
+
+
+
+
+
 
 
 

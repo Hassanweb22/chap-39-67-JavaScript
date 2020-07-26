@@ -7,11 +7,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="files/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
+
+
+<style>
+
+</style>
 
 <body>
   <h2 id="demotext" class="mx-auto">Assignment #03 Javascript</h2>
@@ -33,7 +39,7 @@
     <!-- <a target="blank" name="" id="" class="btn btn-outline-success" href="chap1_console.html" role="button">Click Here</a> -->
   </div>
 
-  <p></p>
+
 
 
   <!-- Chapter 2 -->
@@ -166,6 +172,8 @@
       </div>
     </div>
 
+
+    <p>Below table is also answer of question 3 chapter49-52</p>
     <div class="table-responsive-sm">
       <table class="table text-center bg-light mt-2 my-4 col col-lg-8 col-md-10 col-12 mx-auto">
         <thead class="thead-dark">
@@ -187,28 +195,124 @@
   <div class="chap3">
     <h3 class="mt-3">Chapter# 49-52</h3>
     <p>Click below down the button for the answerss of Chapter #03</p>
+    <p>Qno1: </p>
 
+
+
+    <div class=" my-2">
+
+      <form onsubmit="perform(event)" class="signup container w-50 mx-auto">
+
+        <div class="form-group">
+          <label for="fname">First Name: </label>
+          <input value="Hassan" type="text" id="fname" name="First Name" placeholder="Enter Your First Name" value=""
+            class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="lname" class="nameslabel">Last Name: </label>
+          <input value="Abullah" type="text" id="lname" name="last Name" placeholder="Enter Your Last Name" value=""
+            class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email"
+            aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="contact" class="nameslabel">Contact No: </label>
+          <input type="number" id="contact" name="contact" placeholder="Enter Your Last Name"
+            value="" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+
+        <button type="submit" class="btn btn-primary submitlast">Submit</button>
+      </form>
+
+    </div>
+
+    <div class="table-responsive-sm">
+      <table class="table2 table text-center bg-light mt-2 my-4 col col-lg-8 col-md-10 col-12 mx-auto">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="tbodysignup">
+
+              </tbody>
+      </table>
+
+    </div>
+
+
+    <p class="mt-4">Qno2: </p>
     <div>
       <p id="slowLoris">
         Slow lorises are a group of several species of strepsirrhine primates which make up the genus Nycticebus.
         <a href="javascript:void(0);" onclick="expandLoris()"><em>Click for more.</em></a>
       </p>
     </div>
-
-    <button type="button" class="btn btn-outline-success" onclick="chap3_q1()">Question_1</button>
-    <button type="button" class="btn btn-outline-success" onclick="chap3_q2()">Question_2</button>
-    <button type="button" class="btn btn-outline-success" onclick="chap3_q3()">Question_3</button>
-    <button type="button" class="btn btn-outline-success" onclick="chap3_q4()">Question_4</button>
   </div>
 
   <!-- Chapter 4 -->
-  <div class="chap4">
-    <h3 class="mt-3">Chapter# 48-67</h3>
-    <p>Click below down the button for the answerss of Chapter #03</p>
-    <button type="button" class="btn btn-outline-success" onclick="chap4_q1()">Question_1</button>
-    <button type="button" class="btn btn-outline-success" onclick="chap4_q2()">Question_2</button>
-    <button type="button" class="btn btn-outline-success" onclick="chap4_q3()">Question_3</button>
-    <button type="button" class="btn btn-outline-success" onclick="chap4_q4()">Question_4</button>
+  <p>Chapter #58-67</p>
+  <div>
+    <h1> DOM </h1>
+    <div id="form-content" class="content">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" value="hasso" />
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" value="Lover" />
+      <label for="email">Email</label>
+      <input type="text" id="email" value="hasso0987khan@gmali.com" />
+    </div>
+
+    <div id="main-content" class="content">
+      <p class="render"> First Name : Alex</p>
+      <p class="render" id="lastName">Last Name: Bank</p>
+      <p class="render"> Email : alexbank@example.com</p>
+      <p class="render"> Country : Pakistan </p>
+      <p class="render"> contact : +92 300 1234567</p>
+    </div>
+  </div>
+  <div id="maincontent" class="content">
+    <p class="render"> First Name : Alex</p>
+    <p class="render" id="lastName">Last Name: Bank</p>
+    <p class="render"> Email : alexbank@example.com</p>
+    <p class="render"> Country : Pakistan </p>
+    <p class="render"> contact : +92 300 1234567</p>
+  </div>
+  <!-- <button type="button" class="btn btn-outline-success" onclick="chap1_q3()">Question_3</button>
+<button type="button" class="btn btn-outline-success" onclick="chap1_q4()">Question_4</button>
+<button type="button" class="btn btn-outline-success" onclick="chap1_q5()">Question_5</button> -->
+  </div>
+  <p>Get all child elements of div containg id as 'main-content'</p>
+  <button class="btn btn-danger mb-2" onclick="show1()">Click Here!</button>
+  <p>Get innerHTML of all child elements with class as 'render' of main-content div</p>
+  <button class="btn btn-danger mb-2" onclick="show2()">Click Here!</button>
+  <p>Inserting value of input with id 'first-name' using JavaScript</p>
+  <button class="btn btn-danger mb-2" onclick="show3()">Click Here!</button>
+  <p>Getting First and last child element of div containg main-content</p>
+  <button class="btn btn-danger mb-2" onclick="show4()">Click Here!</button>
+  <button class="btn btn-danger mb-2" onclick="show5()">Click To Clean!</button>
+  <button class="btn btn-danger mb-2" onclick="show6()">Click To Show5!</button>
+  <p>GettingParent Node of element having id email: </p>
+  <button class="btn btn-danger mb-2" onclick="show7()">Click To Show6!</button>
+
+  <div id="show">
+
   </div>
 
   <!-- <tr class="delete1" id="tr5">
@@ -251,19 +355,6 @@
 
 
   <script>
-
-
-
-
-
-    // function increase() {
-    //   clearInterval(dec)
-    //   inc
-    // }
-    // function decrease() {
-    //   clearInterval(inc)
-    //   dec
-    // }
 
   </script>
   <script src="assignemnt.js"></script>
